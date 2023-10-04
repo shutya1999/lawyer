@@ -1,0 +1,476 @@
+@import "vars"
+
+*
+  box-sizing: border-box
+
+  &::before, &::after
+    box-sizing: border-box
+
+
+\:root
+  --padding-container: 15px
+  --header-height: 84px
+
+.main
+  overflow: hidden
+  //padding-top: 144px
+  //margin-top: var(--header-height)
+  &.main-bg
+    background: linear-gradient(180deg, #C0CCD9 0%, #FFF 66.55%)
+
+
+html
+  font-family: 'Montserrat', sans-serif
+  font-style: normal
+  font-weight: 300
+  line-height: 140%
+  letter-spacing: 0
+
+
+ul[class], ol[class]
+  padding: 0
+
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: inherit
+
+body
+  scroll-behavior: smooth
+  text-rendering: optimizeSpeed
+  font-size: rem(14)
+  line-height: rem(24)
+  color: var(--text-black)
+
+  &._hide-scroll
+    overflow: hidden
+
+
+ul[class], ol[class]
+  list-style: none
+
+ul, ol
+  list-style-position: inside
+  margin: 0
+  padding: 0
+
+a
+  text-decoration: none
+
+img
+  max-width: 100%
+  display: block
+
+
+article > * + *
+  margin-top: 1em
+
+input, button, textarea, select
+  font: inherit
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  -webkit-background-clip: text
+  -webkit-text-fill-color: white
+  transition: background-color 5000s ease-in-out 0s
+  box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0)
+  -webkit-appearance: none
+  -webkit-border-radius: 0
+
+
+.container
+  padding: 0 var(--padding-container)
+  margin: 0 auto
+  max-width: 1140px
+
+
+.btn
+  color: var(--brand-blue)
+  font-size: rem(13)
+  font-weight: 700
+  border-radius: 40px
+  background: white
+  padding: 12px 64px
+  cursor: pointer
+  line-height: normal
+  border: 1px solid white
+  transition: all .3s
+  @media (hover: hover)
+    &:hover
+      background: rgba(0,0,0,0)
+      color: white
+
+  &.btn-light-blue
+    border: 1px solid var(--brand-blue)
+    background: rgba(0, 87, 184, 0.10)
+    @media (hover: hover)
+      &:hover
+        background: var(--brand-blue)
+        color: white
+
+  &.btn-blue
+    background-color: var(--brand-blue)
+    color: white
+    border-color: var(--brand-blue)
+    @media (hover: hover)
+      &:hover
+        background: rgba(0,0,0,0)
+        color: var(--brand-blue)
+
+
+
+.form-group
+  & .form-input
+    width: 100%
+    border: none
+    color: rgba(0, 87, 184, 0.50)
+    font-family: 'Montserrat', sans-serif
+    font-size: rem(13)
+    font-style: normal
+    font-weight: 500
+    line-height: normal
+    outline: none
+    &::placeholder
+      font-family: 'Montserrat', sans-serif
+      font-size: rem(13)
+      font-style: normal
+      font-weight: 400
+      line-height: normal
+
+
+.services-card
+  border-radius: 60px
+  overflow: hidden
+  width: 100%
+  padding-bottom: 57.145%
+  position: relative
+  transition: all .5s
+  cursor: pointer
+  display: block
+  &:before
+    content: ''
+    position: absolute
+    width: 10px
+    height: 100%
+    left: 18%
+    background-color: var(--brand-blue)
+    z-index: 1
+    transition: all .5s
+  & .item-img
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    transition: all .5s
+    & img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  & .item-text
+    position: absolute
+    left: 10%
+    top: 50%
+    transform: translateY(-50%)
+    border-radius: 40px
+    background: #0057B8
+    backdrop-filter: blur(2.5px)
+    padding: 9px 30px
+    color: white
+    font-size: rem(17)
+    font-weight: 500
+    line-height: normal
+    z-index: 1
+    transition: all .5s
+    & .item-price
+      color: rgba(255, 255, 255, 0.60)
+      font-weight: 400
+
+  &._bg-white
+    &:before
+      background-color: white
+    & .item-text
+      background-color: white
+      color: var(--brand-blue)
+      & .item-price
+        color: rgba(0, 87, 184, 0.60)
+
+  & .click-icon
+    position: absolute
+    right: 40px
+    bottom: 30px
+    display: flex
+    align-items: center
+    gap: 0 10px
+    color: white
+    font-size: rem(13)
+    line-height: normal
+    opacity: 0
+    transition: all .3s .1s
+    &:before
+      content: ''
+      display: block
+      min-width: 18px
+      max-width: 18px
+      height: 18px
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 10H4M10 1V4M5.8 5.8L3.6 3.6M14.2 5.8L16.4 3.6M5.8 14.2L3.6 16.4M10 10L19 13L15 15L13 19L10 10Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      @include bg-center
+        background-size: contain
+
+  @media (hover: hover)
+    &:hover
+      &:before
+        left: 50%
+      & .item-img
+        filter: blur(10px)
+      & .item-text
+        left: 30%
+      & .click-icon
+        opacity: 1
+
+
+
+  &.services-card_horizontal
+    &:before
+      left: 0
+      top: auto
+      width: 100%
+      height: 10px
+      bottom: 42px
+    & .item-text
+      top: auto
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 20px
+
+    @media (hover: hover)
+      &:hover
+        &:before
+          left: auto
+          bottom: 72px
+        & .item-text
+          left: 50%
+          bottom: 50px
+
+
+
+// Home
+.top-services
+  margin-top: 60px
+  & .title
+    color: rgba(0, 87, 184, 0.50)
+    font-size: rem(17)
+    line-height: normal
+    text-align: center
+
+  & .items
+    border-radius: 500px
+    background: white
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25)
+    margin-top: 20px
+    padding: 20px 60px
+    position: relative
+    & .title
+      position: absolute
+      right: calc(100% + 30px)
+      top: 50%
+      transform: translateY(-50%)
+      color: var(--brand-blue)
+      font-size: rem(26)
+      font-weight: 700
+      line-height: normal
+      text-transform: uppercase
+      text-align: start
+    & .container
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: 30px
+      position: relative
+
+    & .services-card
+      &:nth-child(even)
+        &:before
+          background-color: white
+        & .item-text
+          background-color: white
+          color: var(--brand-blue)
+          & .item-price
+            color: rgba(0, 87, 184, 0.60)
+
+
+
+
+.home-more
+  padding: 50px 0 100px 0
+  & .home-more__items
+    display: flex
+    flex-wrap: wrap
+    gap: 0 30px
+    & .home-more__item
+      width: 100%
+      max-width: calc(58.559% - 15px)
+      padding-bottom: 0
+      height: 250px
+      &:nth-child(4n+3), &:nth-child(4n+2)
+        max-width: calc(41.441% - 15px)
+      &:nth-child(odd)
+        &:before
+          background-color: white
+        & .item-text
+          background-color: white
+          color: var(--brand-blue)
+          & .item-price
+            color: rgba(0, 87, 184, 0.60)
+
+  & .btn-load
+    width: 100%
+    margin-top: 50px
+    padding: 26px 0
+
+
+
+footer
+  padding: 100px 0
+  & .container
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+  & .footer-left
+    & .logo
+      margin-bottom: 53px
+    & .chat
+      & p
+        color: var(--brand-blue)
+        font-size: rem(17)
+        font-weight: 600
+        line-height: normal
+        margin-bottom: 21px
+      & .btn
+        display: block
+        padding: 22px 0
+        max-width: 255px
+        text-align: center
+
+  & .footer-right
+    display: flex
+    flex-direction: column
+    gap: 30px 0
+    & .footer-col
+      color: var(--brand-blue)
+      line-height: normal
+      max-width: 185px
+      & .footer-col__title
+        font-size: rem(17)
+        font-weight: 600
+        margin-bottom: 15px
+      & .footer-col__text
+        font-size: rem(16)
+        font-weight: 300
+      & a
+        color: inherit
+
+
+
+@media screen and (max-width: 768px)
+  .top-services
+    margin-top: 50px
+    & .title
+      display: none
+    & .items
+      border-radius: 60px
+      padding: 50px 0
+      box-shadow: none
+      & .title
+        display: block
+        position: static
+        top: auto
+        left: auto
+        transform: none
+        font-size: rem(16)
+        line-height: normal
+        padding-left: 60px
+        max-width: 90px
+        margin-bottom: 40px
+      & .container
+        display: block
+        & .services-card
+          margin-bottom: 20px
+          &:last-child
+            margin-bottom: 0
+
+  .services-card
+    border-radius: 40px
+    padding-bottom: 47.223%
+    &:before
+      width: 5px
+      left: 84px
+    & .item-text
+      min-width: 170px
+      font-size: rem(13)
+      padding: 10px 30px
+      left: 46px
+
+    &.services-card_horizontal
+      &:before
+        height: 5px
+        bottom: auto
+        top: 42px
+      & .item-text
+        top: 20px
+        bottom: auto
+
+
+  .home-more
+    padding: 20px 0 50px 0
+    & .home-more__items
+      flex-direction: column
+      gap: 30px 0
+      & .home-more__item
+        max-width: 100%!important
+        height: 170px
+
+    & .btn-load
+      padding: 16px 0
+
+
+
+  footer
+    padding: 50px 0
+    & .container
+      display: block
+
+    & .footer-left
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 50px
+      & .logo
+        margin: 0
+      & .chat
+        flex: 1 1 100%
+        & p
+          text-align: end
+          font-size: rem(14)
+          margin-bottom: 10px
+        & .btn
+          max-width: 130px
+          margin: 0 0 0 auto
+          padding: 11px 0
+
+    & .footer-right
+      align-items: flex-end
+      & .footer-col
+        text-align: end
+        & .footer-col__title
+          margin-bottom: 10px
+          font-size: rem(14)
+        & .footer-col__text
+          font-size: rem(14)
+
+
+
+

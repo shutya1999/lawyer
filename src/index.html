@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Про нас</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="main main-bg">
+    @@include('_header.html')
+
+    <div class="top-services">
+        <div class="container">
+            <p class="h2 title">Дозвольте нам допомогти</p>
+        </div>
+
+
+        <div class="items">
+            <div class="container">
+                <h2 class="title">топ послуги</h2>
+                <a href="" class="item services-card">
+                    <div class="item-img">
+                        <picture>
+                            <source srcset="/img/home/service-1.webp" type="image/webp">
+                            <img src="/img/home/service-1.png" alt="Нотаріус" title="Нотаріус">
+                        </picture>
+                    </div>
+                    <div class="item-text">
+                        <p class="item-name">Нотаріус</p>
+                        <p class="item-price">₴1500</p>
+                    </div>
+                    <div class="click-icon">click</div>
+                </a>
+                <a href="" class="item services-card">
+                    <div class="item-img">
+                        <picture>
+                            <source srcset="/img/home/service-2.webp" type="image/webp">
+                            <img src="/img/home/service-2.png" alt="Нотаріус" title="Нотаріус">
+                        </picture>
+                    </div>
+                    <div class="item-text">
+                        <p class="item-name">Опікунство</p>
+                        <p class="item-price">₴1500</p>
+                    </div>
+                    <div class="click-icon">click</div>
+                </a>
+                <a href="" class="item services-card">
+                    <div class="item-img">
+                        <picture>
+                            <source srcset="/img/home/service-3.webp" type="image/webp">
+                            <img src="/img/home/service-3.png" alt="Нотаріус" title="Нотаріус">
+                        </picture>
+                    </div>
+                    <div class="item-text">
+                        <p class="item-name">Борги</p>
+                        <p class="item-price">₴1200</p>
+                    </div>
+                    <div class="click-icon">click</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="home-more">
+        <div class="container">
+            <div class="home-more__items">
+                <a href="" class="home-more__item services-card services-card_horizontal">
+                    <div class="item-img">
+                        <picture>
+                            <source srcset="/img/home/service-1.webp" type="image/webp">
+                            <img src="/img/home/service-1.png" alt="Нотаріус" title="Нотаріус">
+                        </picture>
+                    </div>
+                    <div class="item-text">
+                        <p class="item-name">Оподаткування</p>
+                        <p class="item-price">₴1500</p>
+                    </div>
+                    <div class="click-icon">click</div>
+                </a>
+                <a href="" class="home-more__item services-card">
+                    <div class="item-img">
+                        <picture>
+                            <source srcset="/img/home/service-1.webp" type="image/webp">
+                            <img src="/img/home/service-1.png" alt="Нотаріус" title="Нотаріус">
+                        </picture>
+                    </div>
+                    <div class="item-text">
+                        <p class="item-name">Нотаріус</p>
+                        <p class="item-price">₴1500</p>
+                    </div>
+                    <div class="click-icon">click</div>
+                </a>
+            </div>
+
+            <button type="button" class="btn btn-light-blue btn-load">Показати ще</button>
+        </div>
+    </div>
+
+    @@include('_footer.html')
+</div>
+
+
+<script src="js/components.js"></script>
+</body>
+</html>

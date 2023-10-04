@@ -1,0 +1,22 @@
+@use 'sass:math'
+
+\:root
+  --brand-blue: #0057B8
+
+
+@function rem($value)
+  $res: math.div($value, 16) + rem
+  @return $res
+
+
+@function em($value)
+  $res: math.div($value, 16) + em
+  @return $res
+
+@mixin bg-center
+  background-position: center
+  background-repeat: no-repeat
+  @content
+
+@mixin vh
+  height: calc(var(--vh, 1vh) * 100)
